@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>web-menu-bar</name>
+   <name>web_menu_bar</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>1c69783b-fde8-4bc1-bb92-9234058cfb37</testCaseGuid>

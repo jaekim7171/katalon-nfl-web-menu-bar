@@ -16,13 +16,30 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+WebUI.comment('Open browser and close browser set in Test Listeners')
+
+WebUI.comment('Desired Capabilities set for headless browser screen size')
 
 WebUI.navigateToUrl(GlobalVariable.BaseURL)
 
-WebUI.maximizeWindow()
+WebUI.callTestCase(findTestCase('shared'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.delay(GlobalVariable.DelayShort)
+if (WebUI.waitForPageLoad(GlobalVariable.WaitShort, FailureHandling.CONTINUE_ON_FAILURE) == false) {
+    WebUI.refresh()
 
-WebUI.closeBrowser()
+    WebUI.waitForPageLoad(GlobalVariable.WaitLong)
+
+    WebUI.delay(GlobalVariable.DelayShort)
+}
+
+'Placed due to alert not displaying in headless firefox'
+if (WebUI.verifyElementVisible(findTestObject('btn_home_alert_no_thanks'), FailureHandling.OPTIONAL) == true) {
+    WebUI.click(findTestObject('btn_home_alert_no_thanks'))
+
+    WebUI.verifyElementNotPresent(findTestObject('btn_home_alert_no_thanks'), 0, FailureHandling.STOP_ON_FAILURE) == true
+}
+
+WebUI.callTestCase(findTestCase('CTC/menu_CTC'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('CTC/submenu_CTC'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 

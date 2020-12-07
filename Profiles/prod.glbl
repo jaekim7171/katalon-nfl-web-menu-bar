@@ -14,4 +14,14 @@
       <initValue>3</initValue>
       <name>DelayShort</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'30'</initValue>
+      <name>WaitLong</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'15'</initValue>
+      <name>WaitShort</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
