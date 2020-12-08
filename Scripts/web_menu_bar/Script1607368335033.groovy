@@ -20,10 +20,15 @@ WebUI.comment('Open browser and close browser set in Test Listeners')
 
 WebUI.comment('Desired Capabilities set for headless browser screen size')
 
+WebUI.comment('Chrome not able to run multiple Call Test Cases. Maybe issue with Katalon 7.8')
+
+WebUI.comment('Works in Firefox, Edge Chromium, Headless Chrome, Headless Firefox')
+
 WebUI.navigateToUrl(GlobalVariable.BaseURL)
 
 WebUI.callTestCase(findTestCase('shared'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 
+'Place due to home page not loading sometimes.'
 if (WebUI.waitForPageLoad(GlobalVariable.WaitShort, FailureHandling.CONTINUE_ON_FAILURE) == false) {
     WebUI.refresh()
 
