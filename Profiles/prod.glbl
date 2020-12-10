@@ -7,7 +7,7 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>'https://www.nfl.com/'</initValue>
-      <name>BaseURL</name>
+      <name>BaseUrl</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>

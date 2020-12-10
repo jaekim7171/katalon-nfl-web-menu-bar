@@ -16,15 +16,16 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.comment('Open browser and close browser set in Test Listeners')
+/* Setting and issues:
+ - Open browser and close browser set in Test Listeners
+ - Desired Capabilities set for headless browser screen size
+ - Chrome not able to run multiple Call Test Cases. Maybe issue with Katalon 7.8
+ - Works in Firefox, Edge Chromium, Headless Chrome, Headless Firefox
+ */
 
-WebUI.comment('Desired Capabilities set for headless browser screen size')
+WebUI.comment('See Script tab for comments')
 
-WebUI.comment('Chrome not able to run multiple Call Test Cases. Maybe issue with Katalon 7.8')
-
-WebUI.comment('Works in Firefox, Edge Chromium, Headless Chrome, Headless Firefox')
-
-WebUI.navigateToUrl(GlobalVariable.BaseURL)
+WebUI.navigateToUrl(GlobalVariable.BaseUrl)
 
 WebUI.callTestCase(findTestCase('shared'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 
